@@ -1,0 +1,188 @@
+
+ /* General Styles */
+.kanban-board {
+  padding: 20px;
+}
+
+/* Header: Main Header of Kanban Board */
+.kanban-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.add-ticket-btn {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Grouping and Sorting Dropdowns */
+.display-control,
+.sorting-control {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+/* Columns Container */
+.columns {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+}
+
+.column {
+  flex: 1;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  min-width: 300px; /* Minimum column width for responsiveness */
+}
+
+/* Column Header */
+.column-header {
+  display: flex;
+  justify-content: space-between; /* Separate left and right sections */
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Left Section: Icon, Title, and Count */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between elements */
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%; /* Circular avatar */
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap; /* Prevent wrapping of long names */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for long names */
+  max-width: 150px; /* Limit name width */
+}
+
+.ticket-count {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c757d;
+  background-color: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+/* Right Section: Plus and Three-Dot Icons */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icons */
+}
+
+.action-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+
+/* For Medium Screens (Tablets) */
+@media (max-width: 768px) {
+  .kanban-header {
+    flex-direction: column; /* Stack grouping and sorting controls */
+    align-items: flex-start; /* Align everything to the left */
+    gap: 15px;
+  }
+
+  .controls {
+    width: 100%; /* Full width for dropdowns */
+    justify-content: space-between;
+  }
+
+  .columns {
+    flex-direction: column; /* Stack columns vertically */
+    gap: 15px;
+  }
+
+  .column {
+    min-width: 100%; /* Columns take full width on smaller screens */
+  }
+
+  .column-header {
+    flex-direction: column; /* Stack header-left and header-actions */
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .header-left {
+    width: 100%; /* Full width for alignment */
+    justify-content: space-between;
+  }
+
+  .header-actions {
+    justify-content: flex-end; /* Align icons to the right */
+    width: 100%;
+  }
+}
+
+/* For Small Screens (Mobile) */
+@media (max-width: 480px) {
+  .add-ticket-btn {
+    font-size: 12px; /* Reduce button font size */
+    padding: 8px 12px; /* Adjust button size */
+  }
+
+  .header-title {
+    flex-direction: column; /* Stack icon and name vertically */
+    align-items: flex-start;
+  }
+
+  h2 {
+    font-size: 14px; /* Smaller font size for names */
+    max-width: 100%; /* Allow names to take full width */
+  }
+
+  .ticket-count {
+    font-size: 12px; /* Smaller ticket count font size */
+    padding: 3px 6px;
+  }
+
+  .action-icon {
+    width: 18px; /* Smaller icons */
+    height: 18px;
+  }
+}
